@@ -60,11 +60,14 @@
   }
 
   PeityPrototype.fill = function() {
-    var fill = this.opts.fill
+    var fill = this.opts.fill // fill:a
 
     return $.isFunction(fill)
       ? fill
-      : function(_, i) { return fill[i % fill.length] }
+      : function(_, i) { 
+          //return fill[i % fill.length] 
+          return _<0? fill[0] : fill[1]
+      }
   }
 
   PeityPrototype.prepare = function(width, height) {
